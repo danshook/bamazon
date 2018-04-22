@@ -20,6 +20,7 @@ function displayMerchandise() {
   connection.query(
     "select item_id, product_name, price from products",
     function(err, res) {
+      if (err) throw err;
       console.table(res);
 
       promptId(res);
@@ -54,14 +55,20 @@ function promptId(inventory) {
         message: "How many would you would like to buy."
       }
     ])
-    .then(function(productId) {
+    .then(function(processOrder) {
       // logic using res value from user
-      for (var i = 0; i < inventory.length; i++) {
-        //console.log("FOR LOOPING");
-        console.log("STOCK QTY: " + inventory[i].stock_quantity);
-      }
-
-      console.log("PRODUCT ID: " + JSON.stringify(productId));
+      // for (var i = 0; i < inventory.length; i++) {
+      //console.log("FOR LOOPING");
+      //   console.log("STOCK QTY: " + inventory[i].stock_quantity);
+      // }
+      // console.log("PRODUCT ID: " + JSON.stringify(productId));
       //console.log("INVENTORY: " + JSON.stringify(inventory));
+      connection.query(
+        "select stock_quantity from products where item_id=" +
+          processOrder.id_choice,
+        function(err, res) {
+          if (err) throw err;
+        }
+      );
     });
 }
