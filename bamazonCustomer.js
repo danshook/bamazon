@@ -16,23 +16,27 @@ connection.connect(function(err) {
 });
 
 function displayMerchandise() {
-  connection.query("select * from products", function(err, res) {
-    console.table(res);
+  // connection.query("select * from products", function(err, res) {
+  connection.query(
+    "select item_id, product_name, price from products",
+    function(err, res) {
+      console.table(res);
 
-    promptId(res);
+      promptId(res);
 
-    // for (var i = 0; i < res.length; i++) {
-    // console.log(
-    //   "ITEM ID: " +
-    //     res[i].item_id +
-    //     " | " +
-    //     "ITEM NAME: " +
-    //     res[i].product_name +
-    //     " | " +
-    //     "ITEM PRICE: " +
-    //     res[i].price
-    // );
-  });
+      // for (var i = 0; i < res.length; i++) {
+      // console.log(
+      //   "ITEM ID: " +
+      //     res[i].item_id +
+      //     " | " +
+      //     "ITEM NAME: " +
+      //     res[i].product_name +
+      //     " | " +
+      //     "ITEM PRICE: " +
+      //     res[i].price
+      // );
+    }
+  );
 }
 
 function promptId(inventory) {
@@ -43,6 +47,11 @@ function promptId(inventory) {
         name: "id_choice",
         message:
           "Please enter the item ID of the product you would like to buy."
+      },
+      {
+        type: "input",
+        name: "qty_choice",
+        message: "How many would you would like to buy."
       }
     ])
     .then(function(productId) {
