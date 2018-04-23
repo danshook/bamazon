@@ -18,3 +18,11 @@ This command line interface (CLI) app was developed as part of a software develo
 <h4>After the user enters the quantity of the product they wish to purchase, the app will check with the database to ensure there is adequate inventory to satisfy the order. If so, the user will receive this message:</h4>
 
 ![](images/3.png)
+
+<h4>In this scenario, the user chooses a different product to purhcase...</h4>
+
+![](images/4.png)
+
+<h4>However, the user attempts to purchase more product than the store has on hand and receives the following message:</h4>
+
+![](images/5.png)
