@@ -28,10 +28,11 @@ This command line interface (CLI) app was developed as part of a software develo
 ![](images/5.png)
 
 <h2>Technologies used</h2>
-* MySQL
-* Node.js
-* NPM Package(s)
-    *MySQL
-    *Inquirer
-    *Console Table
-* JavaScript
+
+    * MySQL
+    * Node.js
+    * NPM Package(s)
+        *MySQL
+        *Inquirer
+        *console.table
+    * JavaScript
