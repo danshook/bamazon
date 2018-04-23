@@ -54,7 +54,6 @@ function promptId(inventory) {
           "select stock_quantity, price from products where item_id='" +
           processOrder.id_choice +
           "';";
-        console.log("Query is:", q1);
 
         c2.query(q1, function(err, res2) {
           console.table(res2);
