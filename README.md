@@ -32,7 +32,7 @@ This command line interface (CLI) app was developed as part of a software develo
     * MySQL
     * Node.js
     * NPM Package(s)
-        *MySQL
-        *Inquirer
-        *console.table
+        * MySQL
+        * Inquirer
+        * console.table
     * JavaScript
